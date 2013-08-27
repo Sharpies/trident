@@ -21,6 +21,9 @@
  */
 package org.trident.packet;
 
+import org.jboss.netty.buffer.ChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffers;
+
 /**
  * Helps create a {@link Packet}
  * @author Ares_
@@ -28,4 +31,34 @@ package org.trident.packet;
  */
 public final class PacketBuilder {
 
+	/**
+	 * The opcode.
+	 */
+	private final short opcode;
+	
+	/**
+	 * The {@link PacketType}
+	 */
+	private PacketType type;
+	
+	/**
+	 * The buffer
+	 */
+	private final ChannelBuffer buffer = ChannelBuffers.dynamicBuffer();
+	
+	/**
+	 * The current packet access
+	 */
+	private PacketAccess access = PacketAccess.BYTE_ACCESS;
+
+	/**
+	 * Creates a new {@link PacketBuilder} with opcode and type
+	 * @param opcode The opcode
+	 * @param type The type
+	 */
+	public PacketBuilder(int opcode, PacketType type) {
+		this.opcode = (short)opcode;
+		this.type = type;
+	}
+	
 }
