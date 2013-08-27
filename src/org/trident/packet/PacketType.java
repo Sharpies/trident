@@ -22,7 +22,7 @@
 package org.trident.packet;
 
 /**
- * An enumeration of the different packet lengths.
+ * An enumeration which contains the different types of packets.
  * @author Ares_
  *
  */
