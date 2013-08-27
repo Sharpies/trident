@@ -39,6 +39,11 @@ public class Packet {
 	 * The type of a packet
 	 */
 	private PacketType type;
+
+	/**
+	 * The length
+	 */
+	private final int length;
 	
 	/**
 	 * The payload
@@ -54,6 +59,7 @@ public class Packet {
 	public Packet(int opcode, PacketType type, ChannelBuffer payload) {
 		this.opcode = (short)opcode;
 		this.type = type;
+		this.length = payload.readableBytes();
 		this.payload = payload;
 	}
 	
@@ -71,6 +77,14 @@ public class Packet {
 	 */
 	public PacketType getType() {
 		return type;
+	}
+	
+	/**
+	 * Gets the payload length
+	 * @return The payload length
+	 */
+	public int getLength() {
+		return length;
 	}
 	
 	/**
