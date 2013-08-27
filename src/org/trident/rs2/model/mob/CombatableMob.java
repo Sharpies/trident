@@ -30,4 +30,12 @@ import org.trident.rs2.model.Combatable;
  */
 public final class CombatableMob extends Combatable {
 
+	/**
+	 * @param index
+	 */
+	public CombatableMob(int index) {
+		super(index);
+		// TODO Auto-generated constructor stub
+	}
+
 }

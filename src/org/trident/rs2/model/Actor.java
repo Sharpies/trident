@@ -30,4 +30,12 @@ import org.trident.rs2.Entity;
  */
 public abstract class Actor extends Entity {
 
+	/**
+	 * @param index
+	 */
+	public Actor(int index) {
+		super(index);
+		// TODO Auto-generated constructor stub
+	}
+
 }

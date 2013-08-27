@@ -30,4 +30,12 @@ import org.trident.rs2.model.Actor;
  */
 public final class Mob extends Actor {
 
+	/**
+	 * @param index
+	 */
+	public Mob(int index) {
+		super(index);
+		// TODO Auto-generated constructor stub
+	}
+
 }

@@ -28,4 +28,12 @@ package org.trident.rs2.model;
  */
 public abstract class Combatable extends Actor {
 
+	/**
+	 * @param index
+	 */
+	public Combatable(int index) {
+		super(index);
+		// TODO Auto-generated constructor stub
+	}
+
 }

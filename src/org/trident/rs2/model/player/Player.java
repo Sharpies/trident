@@ -30,4 +30,12 @@ import org.trident.rs2.model.Combatable;
  */
 public final class Player extends Combatable {
 
+	/**
+	 * @param index
+	 */
+	public Player(int index) {
+		super(index);
+		// TODO Auto-generated constructor stub
+	}
+
 }
