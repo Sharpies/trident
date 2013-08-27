@@ -21,6 +21,8 @@
  */
 package org.trident.packet;
 
+import org.jboss.netty.buffer.ChannelBuffer;
+
 /**
  * The packet structure
  * @author Ares_
@@ -39,11 +41,20 @@ public class Packet {
 	private PacketType type;
 	
 	/**
-	 * Constructs a new {@link Packet}
-	 * @param opcode
+	 * The dynamic {@link ChannelBuffer}
 	 */
-	public Packet(int opcode) {
+	private ChannelBuffer buffer;
+	
+	/**
+	 * Constructs a new {@link Packet}
+	 * @param opcode the opcode for packet
+	 * @param type the type of packet
+	 * @param buffer the channel buffer
+	 */
+	public Packet(int opcode, PacketType type, ChannelBuffer buffer) {
 		this.opcode = (short)opcode;
+		this.type = type;
+		this.buffer = buffer;
 	}
 	
 	/**
@@ -60,6 +71,14 @@ public class Packet {
 	 */
 	public PacketType getType() {
 		return type;
+	}
+	
+	/**
+	 * The dynamic channel buffer
+	 * @return The channel buffer
+	 */
+	public ChannelBuffer getBuffer() {
+		return buffer;
 	}
 	
 }
