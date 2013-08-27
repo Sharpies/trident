@@ -22,44 +22,30 @@
 package org.trident.packet;
 
 /**
- * The packet structure
+ * An enumeration of the different packet lengths.
  * @author Ares_
  *
  */
-public class Packet {
+public enum PacketType {
 
 	/**
-	 * The op code of the packet
-	 */
-	private final short opcode;
-	
-	/**
-	 * The type of a packet
-	 */
-	private PacketType type;
-	
-	/**
-	 * Constructs a new {@link Packet}
-	 * @param opcode
-	 */
-	public Packet(int opcode) {
-		this.opcode = (short)opcode;
-	}
-	
-	/**
-	 * Gets the opcode for the packet
-	 * @return The opcode for the packet
-	 */
-	public short getOpcode() {
-		return opcode;
-	}
-	
-	/**
-	 * Gets the packet type
-	 * @return The packet type
-	 */
-	public PacketType getType() {
-		return type;
-	}
-	
+     * A packet with no header.
+     */
+    RAW,
+    
+    /**
+     * A packet with a known value by both client and server.
+     */
+    FIXED,
+
+    /**
+     * A packet where the length is sent as a byte.
+     */
+    VARIABLE_BYTE,
+
+    /**
+     * A packet where the length is sent as a short.
+     */
+    VARIABLE_SHORT
+    
 }

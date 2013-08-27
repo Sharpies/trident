@@ -22,44 +22,35 @@
 package org.trident.packet;
 
 /**
- * The packet structure
+ * Handles all the packet constants
  * @author Ares_
  *
  */
-public class Packet {
+public final class PacketConstants {
 
 	/**
-	 * The op code of the packet
+	 * The default 317 {@link #PACKET_LENGTHS}
 	 */
-	private final short opcode;
+	public static final int[] PACKET_LENGTHS = { 0, 0, 0, 1, -1, 0, 0, 0, 0, 0,
+	    0, 0, 0, 0, 8, 0, 6, 2, 2, 0, 0, 2, 0, 6, 0, 12, 0, 0, 0, 0, 0, 0,
+	    0, 0, 0, 8, 4, 0, 0, 2, 2, 6, 0, 6, 0, -1, 0, 0, 0, 0, 0, 0, 0, 12,
+	    0, 0, 0, 0, 8, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 2, 2, 8, 6,
+	    0, -1, 0, 6, 0, 0, 0, 0, 0, 1, 4, 6, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0,
+	    -1, 0, 0, 13, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0,
+	    0, 1, 0, 6, 0, 0, 0, -1, 0, 2, 6, 0, 4, 6, 8, 0, 6, 0, 0, 0, 2, 0,
+	    0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 1, 2, 0, 2, 6, 0, 0, 0, 0, 0, 0,
+	    0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 3, 0,
+	    2, 0, 0, 8, 1, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0,
+	    0, 4, 0, 4, 0, 0, 0, 7, 8, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, -1, 0, 6,
+	    0, 1, 0, 0, 0, 6, 0, 6, 8, 1, 0, 0, 4, 0, 0, 0, 0, -1, 0, -1, 4, 0,
+	    0, 6, 6, 0, 0, 0 
+    };
 	
 	/**
-	 * The type of a packet
+	 * Default private constructor
 	 */
-	private PacketType type;
-	
-	/**
-	 * Constructs a new {@link Packet}
-	 * @param opcode
-	 */
-	public Packet(int opcode) {
-		this.opcode = (short)opcode;
+	private PacketConstants() {
+		// TODO Auto-generated constructor stub
 	}
-	
-	/**
-	 * Gets the opcode for the packet
-	 * @return The opcode for the packet
-	 */
-	public short getOpcode() {
-		return opcode;
-	}
-	
-	/**
-	 * Gets the packet type
-	 * @return The packet type
-	 */
-	public PacketType getType() {
-		return type;
-	}
-	
+
 }
