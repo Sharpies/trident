@@ -21,6 +21,8 @@
  */
 package org.trident.rs2.model;
 
+import java.util.BitSet;
+
 /**
  * The Update Flags used by both {@link Player} & {@link Mob}
  * @author Ares_
@@ -28,5 +30,81 @@ package org.trident.rs2.model;
  */
 public final class UpdateFlags {
 
+	/**
+	 * The {@link BitSet} of {@link UpdateFlags}.
+	 */
+	private final BitSet flags = new BitSet();
+	
+	/**
+	 * An enumeration of the update flags
+	 * @author Ares_
+	 *
+	 */
+	public static enum UpdateFlag {
+		
+		/**
+		 * Appearance update.
+		 */
+		APPEARANCE,
+
+		/**
+		 * Chat update.
+		 */
+		CHAT,
+
+		/**
+		 * Graphics update.
+		 */
+		GRAPHICS,
+
+		/**
+		 * Animation update.
+		 */
+		ANIMATION,
+
+		/**
+		 * Forced chat update.
+		 */
+		FORCED_CHAT,
+
+		/**
+		 * Interacting actor update.
+		 */
+		FACE_ACTOR,
+
+		/**
+		 * Face coordinate actor update.
+		 */
+		FACE_COORDINATE,
+
+		/**
+		 * Hit update.
+		 */
+		HIT,
+
+		/**
+		 * Hit 2 update/
+		 */
+		HIT_2,
+
+		/**
+		 * Update flag used to transform npc to another.
+		 */
+		TRANSFORM,
+
+		/**
+		 * Forces the player to walk from a given coordinate to a given coordinate.
+		 */
+		FORCE_WALK
+		
+	}
+
+	/**
+	 * We check if an update is required or not
+	 * @return If the update is required
+	 */
+	public boolean isUpdateRequired() {
+		return !flags.isEmpty();
+	}
 	
 }
