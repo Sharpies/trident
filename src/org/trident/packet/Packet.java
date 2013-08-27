@@ -41,20 +41,20 @@ public class Packet {
 	private PacketType type;
 	
 	/**
-	 * The dynamic {@link ChannelBuffer}
+	 * The payload
 	 */
-	private ChannelBuffer buffer;
+	private ChannelBuffer payload;
 	
 	/**
 	 * Constructs a new {@link Packet}
 	 * @param opcode the opcode for packet
 	 * @param type the type of packet
-	 * @param buffer the channel buffer
+	 * @param payload the payload
 	 */
-	public Packet(int opcode, PacketType type, ChannelBuffer buffer) {
+	public Packet(int opcode, PacketType type, ChannelBuffer payload) {
 		this.opcode = (short)opcode;
 		this.type = type;
-		this.buffer = buffer;
+		this.payload = payload;
 	}
 	
 	/**
@@ -74,11 +74,11 @@ public class Packet {
 	}
 	
 	/**
-	 * The dynamic channel buffer
-	 * @return The channel buffer
+	 * The payload
+	 * @return The payload
 	 */
-	public ChannelBuffer getBuffer() {
-		return buffer;
+	public ChannelBuffer getPayload() {
+		return payload;
 	}
 	
 }
