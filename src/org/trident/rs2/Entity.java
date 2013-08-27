@@ -36,26 +36,22 @@ public abstract class Entity {
 	/**
 	 * The entity index
 	 */
-	private transient int index;
+	private final int index;
+	
+	/**
+	 * Creates a new {@link Entity}
+	 * @param index The entity index
+	 */
+	public Entity(int index) {
+		this.index = index;
+	}
 	
 	/**
 	 * Gets the entitys index
 	 * @return The index
 	 */
 	public final int getIndex() {
-		synchronized(this) {
-			return index;
-		}
-	}
-	
-	/**
-	 * Sets the entity index
-	 * @param index The index
-	 */
-	public final void setIndex(int index) {
-		synchronized(this) {
-			this.index = index;
-		}
+		return index;
 	}
 	
 	/**
@@ -66,4 +62,12 @@ public abstract class Entity {
 		return position;
 	}
 
+	/**
+	 * Sets the {@link Entity} position
+	 * @param position The position
+	 */
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+	
 }
