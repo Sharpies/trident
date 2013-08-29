@@ -19,23 +19,58 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
  * THE SOFTWARE.
  */
-package org.trident.rs2.model.player;
-
-import org.trident.rs2.model.Combatable;
+package org.trident.packet.util;
 
 /**
- * A human controlled player extending {@link Combatable}
- * @author Ares_
- *
+ * Represents the different simple data types.
+ * @author Graham
  */
-public final class Player extends Combatable {
+public enum DataType {
 
 	/**
-	 * @param index
+	 * A byte.
 	 */
-	public Player(int index) {
-		super(index);
-		// TODO Auto-generated constructor stub
+	BYTE(1),
+
+	/**
+	 * A short.
+	 */
+	SHORT(2),
+
+	/**
+	 * A 'tri byte' - a group of three bytes.
+	 */
+	TRI_BYTE(3),
+
+	/**
+	 * An integer.
+	 */
+	INT(4),
+
+	/**
+	 * A long.
+	 */
+	LONG(8);
+
+	/**
+	 * The number of bytes this type occupies.
+	 */
+	private final int bytes;
+
+	/**
+	 * Creates a data type.
+	 * @param bytes The number of bytes it occupies.
+	 */
+	private DataType(int bytes) {
+		this.bytes = bytes;
+	}
+
+	/**
+	 * Gets the number of bytes the data type occupies.
+	 * @return The number of bytes.
+	 */
+	public int getBytes() {
+		return bytes;
 	}
 
 }
